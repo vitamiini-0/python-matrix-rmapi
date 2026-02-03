@@ -14,6 +14,8 @@ router = APIRouter()  # These endpoints are public
 router_v2 = APIRouter()
 
 
+PRODUCT_SHORTNAME = "matrix"
+
 class ProductComponent(BaseModel):  # pylint: disable=too-few-public-methods
     """Project component info"""
 
@@ -47,7 +49,7 @@ async def return_product_description(language: str) -> ProductDescription:
     LOGGER.debug("Got language: {}".format(language))
     if language == "fi":
         return ProductDescription(
-            shortname="fake",
+            shortname=PRODUCT_SHORTNAME,
             title="Feikkituote",
             icon=None,
             description=""""tuote" integraatioiden testaamiseen""",
@@ -55,10 +57,10 @@ async def return_product_description(language: str) -> ProductDescription:
         )
     if language == "en":
         return ProductDescription(
-            shortname="fake",
-            title="Fake Product",
+            shortname=PRODUCT_SHORTNAME,
+            title="Matrix",
             icon=None,
-            description="Fake product for integrations testing and examples",
+            description="Matrix product",
             language="en",
         )
     # NOTE: Generally should return just the default language but this is for testing purposes
@@ -71,13 +73,12 @@ async def return_product_description(language: str) -> ProductDescription:
 )
 async def return_product_description_extended(language: str) -> ProductDescriptionExtended:
     """Fetch description from each product in manifest"""
-    shortname = "fake"
-    md_url = f"/api/v1/product/proxy/fake/api/v2/clients/{language}/info.md"
+    md_url = f"/api/v1/product/proxy/{PRODUCT_SHORTNAME}/api/v2/clients/{language}/info.md"
     docs_url = "https://pvarki.github.io/Docusaurus-docs/docs/android/deployapp/home/"
 
     if language == "fi":
         return ProductDescriptionExtended(
-            shortname=shortname,
+            shortname=PRODUCT_SHORTNAME,
             title="Feikkituote",
             icon=None,
             description=""""tuote" integraatioiden testaamiseen""",
@@ -87,7 +88,7 @@ async def return_product_description_extended(language: str) -> ProductDescripti
         )
     if language == "sv":
         return ProductDescriptionExtended(
-            shortname=shortname,
+            shortname=PRODUCT_SHORTNAME,
             title="Falsk produkt",
             icon=None,
             description="Falsk produkt för integrationstestning och exempel",
@@ -96,10 +97,10 @@ async def return_product_description_extended(language: str) -> ProductDescripti
             component=ProductComponent(type="markdown", ref=md_url),
         )
     return ProductDescriptionExtended(
-        shortname=shortname,
-        title="Fake Product",
+        shortname=PRODUCT_SHORTNAME,
+        title="Matrix Product",
         icon=None,
-        description="Fake product for integrations testing and examples",
+        description="Matrix product for integrations testing and examples",
         language=language,
         docs=docs_url,
         component=ProductComponent(type="markdown", ref=md_url),

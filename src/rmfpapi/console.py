@@ -1,4 +1,4 @@
-"""CLI entrypoints for fake product integration api"""
+"""CLI entrypoints for matrix product integration api"""
 
 import asyncio
 import logging

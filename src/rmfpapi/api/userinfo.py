@@ -44,7 +44,7 @@ Pyörii deploymentissa "{dname}"
     # TODO: Add Swedish
     # Fall-back to english
     return f"""
-## Fake product
+## Matrix product
 
 Hello {callsign}! This is a minimal example integration for integration developers' reference.
 

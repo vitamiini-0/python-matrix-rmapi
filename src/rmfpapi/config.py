@@ -26,9 +26,9 @@ def get_manifest() -> Dict[str, Any]:
                 "certcn": "rasenmaeher",
             },
             "product": {
-                "dns": "fake.localmaeher.dev.pvarki.fi",
-                "api": "https://fake.localmaeher.dev.pvarki.fi:4626/",
-                "uri": "https://fake.localmaeher.dev.pvarki.fi:4626/",
+                "dns": "matrix.localmaeher.dev.pvarki.fi",
+                "api": "https://matrix.localmaeher.dev.pvarki.fi:4626/",
+                "uri": "https://matrix.localmaeher.dev.pvarki.fi:4626/",
             },
         }
     data = json.loads(pth.read_text(encoding="utf-8"))

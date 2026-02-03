@@ -14,5 +14,5 @@ def test_get_description(mtlsclient: TestClient, lang: str) -> None:
     resp = mtlsclient.get(f"/api/v1/description/{lang}")
     assert resp.status_code == 200
     payload = resp.json()
-    assert payload["shortname"] == "fake"
+    assert payload["shortname"] == "matrix"
     assert payload["language"] == lang

@@ -2,7 +2,7 @@
 rmfpapi
 =======
 
-Fake product RASENMAEHER integration API service. Serves as a reference implementation for a new integration into the deploy app ecosystem.
+Matrix service RASENMAEHER integration API service. Serves as a reference implementation for a new integration into the deploy app ecosystem.
 
 Docker
 ------
