@@ -33,7 +33,7 @@ def cli_group(ctx: click.Context, loglevel: int, verbose: int) -> None:
 
 @cli_group.command(name="healthcheck")
 @click.option("--host", default="localhost", help="The host to connect to")
-@click.option("--port", default=8001, help="The port to connect to")
+@click.option("--port", default=8012, help="The port to connect to")
 @click.option("--timeout", default=2.0, help="The timeout in seconds")
 @click.pass_context
 def do_http_healthcheck(ctx: click.Context, host: str, port: int, timeout: float) -> None:
