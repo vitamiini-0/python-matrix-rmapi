@@ -1,12 +1,12 @@
 """Package level tests"""
 
 from fastapi.testclient import TestClient
-from rmfpapi import __version__
+from matrixrmapi import __version__
 
 
 def test_version() -> None:
     """Make sure version matches expected"""
-    assert __version__ == "1.4.0"
+    assert __version__ == "0.0.1"
 
 
 def test_healthcheck(mtlsclient: TestClient) -> None:

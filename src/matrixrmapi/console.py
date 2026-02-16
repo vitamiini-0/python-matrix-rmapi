@@ -8,8 +8,8 @@ import click
 from libadvian.logging import init_logging
 import aiohttp
 
-from rmfpapi import __version__
-from rmfpapi.app import get_app
+from matrixrmapi import __version__
+from matrixrmapi.app import get_app
 
 
 LOGGER = logging.getLogger(__name__)
@@ -33,7 +33,7 @@ def cli_group(ctx: click.Context, loglevel: int, verbose: int) -> None:
 
 @cli_group.command(name="healthcheck")
 @click.option("--host", default="localhost", help="The host to connect to")
-@click.option("--port", default=8001, help="The port to connect to")
+@click.option("--port", default=8012, help="The port to connect to")
 @click.option("--timeout", default=2.0, help="The timeout in seconds")
 @click.pass_context
 def do_http_healthcheck(ctx: click.Context, host: str, port: int, timeout: float) -> None:
@@ -70,7 +70,7 @@ def dump_openapi(ctx: click.Context) -> None:
     ctx.exit(0)
 
 
-def rmfpapi_cli() -> None:
-    """rmfpapi"""
+def matrixrmapi_cli() -> None:
+    """matrixrmapi"""
     init_logging(logging.WARNING)
     cli_group()  # pylint: disable=no-value-for-parameter
